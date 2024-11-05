@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        cursor: none;
+    }
+
+    .cursor,
+    .follower span {
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .cursor {
+        width: 8px;
+        height: 8px;
+        opacity: 0;
+        z-index: 1001;
+    }
+
+    .follower span {
+        width: 0;
+        height: 0;
+        background-color: #5afb90;
+        opacity: 0.9;
+        z-index: 1000;
+    }
+
+    .droplet {
+        width: 200px;
+        height: 200px;
+        background-color: #3faac0;
+        border-radius: 50%;
+        position: absolute;
+        opacity: 0.9;
+        z-index: 999;
+    }
+
+    #video {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+</style>
+
+<body>
+    <video id="video" src="./main_1.mp4" autoplay loop></video>
+
+    <div class="cursor"></div>
+    <div class="follower"><span></span></div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
