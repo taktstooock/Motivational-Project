@@ -12,7 +12,8 @@ function CursorFollower(){
       mouseY = 0,
       followX = 0,
       followY = 0,
-      delay = 4;
+      delay = 4,
+      isFirstClick = true;
 
   // マウス座標の取得
   $(document).on("mousemove", function(e) {
@@ -22,6 +23,13 @@ function CursorFollower(){
 
   // クリックイベントでのアニメーション
   $(document).on("click", function(e) {
+    if (isFirstClick) {
+      const element = document.documentElement;
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      }
+      isFirstClick = false;
+    }
     createDroplet(followX, followY);
   });
 
